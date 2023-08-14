@@ -9,10 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route exact path='/password' element={<Password />} />
-        <Route exact path='/email' element={<Email />} />
-        <Route exact path='/*' element={<NotFound />} />
+        <Route exact path='/email-password-generator/' element={<Home />} />
+        <Route exact path='/email-password-generator/password' element={<Password />} />
+        <Route exact path='/email-password-generator/email' element={<Email />} />
+        <Route exact path='/email-password-generator/*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
