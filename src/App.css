@@ -1,38 +1,420 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  --matrix-green: #00cc00;
+  --matrix-dark-green: #00cc00d7;
+  --monospace-font: 'Share Tech Mono', monospace;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+                            /* -----GENERAL----- */
+
+*{
+  margin: 0;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
   color: white;
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("./images/matrix-fall.jpg") no-repeat center / cover;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding: 3% 5%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgb(62, 59, 59);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card h1, .card p {
+  margin: 0 0 15px 0;
+}
+
+.card h1 {
+  font-size: 1.9rem;
+  font-family: var(--monospace-font);
+  color: var(--matrix-green);
+  margin-bottom: 25px;
+}
+
+.navbar {
+  display: flex;
+  place-content: center center;
+  margin: 0 0 25px 0;
+}
+
+.navbar .link {
+  text-decoration: none;
+  padding: 0 30px;
+  filter: opacity(0.4);
+  transform: scale(0.9);
+  transition: 0.7s;
+}
+
+.navbar .link:hover {
+  filter: opacity(1);
+  transform: scale(1.1); 
+}
+
+.navbar .active {
+  filter: opacity(1) brightness(1.2);
+  transform: scale(1.1);
+}
+
+.generate-btn {
+  width: 52%;
+  margin: 25px 0 0 0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: var(--monospace-font);
+  font-size: 0.98rem;
+  color: var(--matrix-green);
+  background: linear-gradient(to left, rgba(0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  animation: flashing 2s linear infinite;
+}
+
+.copy-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.card .reveal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 -30px 0;
+}
+
+.card .reveal .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  transform: translateX(30px);
+}
+.card .reveal .result:hover {
+  transform: translateX(-10px);
+}
+
+.card .reveal .result .data {
+  background-color: black;
+  color: var(--matrix-dark-green);
+  padding: 5px 25px;
+  margin: 10px 0;
+  border-radius: 10px;
+  filter: brightness(1.2);
+}
+
+.copy-btn {
+  color: var(--matrix-green);
+  background-color: transparent;
+  transition: 1s;
+  transform: scale(0);
+  cursor: pointer;
+}
+
+.copy-btn .copy::before {
+  content: '';
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url(./icons/copy-icon.png);
+  background-size: 1.5em 1.5em;
+  vertical-align: middle;
+}
+
+.copy-btn .copied::before {
+  content: '';
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(./icons/copied-icon.png);
+  background-size: 1.2em 1.2em;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.result:hover .copy-btn {
+  transform: scale(1);
+}
+
+.result .copy-btn:hover {
+  filter: brightness(2);
+}
+
+.warning {
+  margin: 10px;
+}
+
+.warning strong {
+  color: red;
+  animation: flashing 0.8s ease-in-out 10;
+}
+
+.warning span {
+  text-decoration: underline;
+}
+
+@keyframes flashing {
+  0% {
+    filter: brightness(0.7);
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(0.7);
   }
 }
+
+
+                              /* -----GENERAL----- */
+                              
+
+                              /* --------HOME--------- */
+
+.card .home-hero {
+  font-size: 1.2rem;
+}
+
+.card .home-hero b {
+  color: var(--matrix-dark-green);
+}
+
+.card .buttons .nav-btn {
+  margin: 25px 20px 0 0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: var(--monospace-font);
+  font-size: 0.98rem;
+  color: var(--matrix-green);
+  background: linear-gradient(to left, rgba(0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.card .nav-btn:hover {
+  transition: 1s;
+  filter: brightness(2.5);
+}
+
+                            /* -------------HOME---------- */
+
+                           /* -------------PASSWORD---------- */
+
+.card .pwd-length {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.card .pwd-length label {
+  padding: 0 15px;
+}
+
+.card .pwd-length span {
+  color: var(--matrix-dark-green);
+  font-size: 1.1rem;
+  font-family: var(--monospace-font);
+}
+
+.card .pwd-length #length {
+  border: none;
+  background-color: transparent;
+  width: 30%;
+}
+
+.card .pwd-length #length::-moz-range-track, .card .pwd-length #length::-webkit-slider-runnable-track {
+  cursor: grab;
+  background-color: black;
+  height: 10px;
+  border-radius: 50px;
+}
+
+.card .pwd-length #length::-moz-range-thumb, .card .pwd-length #length::-webkit-slider-thumb {
+  background-color: var(--matrix-green);
+  cursor: grab;
+  height: 10px;
+}
+
+.card .pwd-special-chara {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card .pwd-special-chara label {
+  cursor: pointer;
+}
+
+.card .pwd-special-chara #checkbox {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: black;
+  width: 1.15em;
+  height: 1.15em;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: 0 5px 0 0;
+  display: grid;
+  place-content: center;
+}
+
+.card .pwd-special-chara #checkbox::before  {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50px;
+  transform: scale(0);
+  box-shadow: inset 1em 1em var(--matrix-green);
+}
+
+.card .pwd-special-chara #checkbox:checked::before {
+  transform: scale(1);
+}
+
+
+                           /* -------------PASSWORD---------- */
+
+                          /* -------------EMAIL---------- */
+
+.card .domain {
+  width: 100%;
+  display: flex;
+  place-content: center center;
+}
+
+.card .domain #select {
+  margin: 0 0 0 15px;
+  border: solid 3px black;
+  border-radius: 10px;
+  background-color: black;
+  font-size: 0.9rem;
+  color: var(--matrix-dark-green);
+  width: 30%;
+  cursor: pointer;
+}
+
+                          /* -------------EMAIL---------- */
+                          
+                          /* -------------MEDIA QUERIES---------- */
+                          
+@media (max-width: 480px) {
+
+                            /* ------------SMARTPHONE----------- */
+                          
+
+  .card {
+    width: 80%;
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+  }
+
+  .card h1 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+  }
+
+  .card .home-hero {
+    font-size: 0.9rem;
+  }
+
+  .card .buttons {
+    display: flex;
+  }
+
+  .card .buttons .nav-btn {
+    margin: 10px 5px;
+    padding: 2.5px 10px;
+    width: 90%;
+    font-size: 0.85rem;
+    animation: flashing 2.5s linear infinite;
+  }
+
+  .navbar {
+    margin: 5px;
+  }
+
+  .card .domain #select {
+    font-size: 0.8rem;
+    width: 40%;
+  }
+
+  .generate-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    animation: flashing 2.5s linear infinite;
+  }
+
+  .card .reveal {
+    margin: 10px 0 0 0;
+  }
+
+  .card .reveal .result {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+  }
+  .card .reveal .result:hover {
+    transform: translateX(0);
+  }
+
+  .copy-btn {
+    transform: scale(1);
+  }
+
+  .card .pwd-length label,
+  .card .pwd-special-chara {
+    font-size: 0.85rem;
+  }
+
+  .card .pwd-length span {
+    font-size: 0.9rem;
+  }
+
+  .card .pwd-length #length::-moz-range-track, .card .pwd-length #length::-webkit-slider-runnable-track {
+    height: 5px;
+  }
+
+  .card .pwd-length #length::-moz-range-thumb, .card .pwd-length #length::-webkit-slider-thumb {
+    height: 12px;
+  }
+
+  .card .pwd-special-chara {
+    margin-top: 10px;
+  }
+
+  .warning {
+    font-size: 0.9rem;
+  }
+}            
+
+                            /* ------------SMARTPHONE----------- */
+
+                          /* -------------MEDIA QUERIES---------- */
+
+
+
+
+
+
