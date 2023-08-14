@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/email-password-generator/static/css/main.a15aa70b.css",
-    "main.js": "/email-password-generator/static/js/main.a1a32d39.js",
+    "main.js": "/email-password-generator/static/js/main.1f009d6d.js",
     "static/js/787.a228ea0b.chunk.js": "/email-password-generator/static/js/787.a228ea0b.chunk.js",
     "static/media/matrix-fall.jpg": "/email-password-generator/static/media/matrix-fall.b02891495a0c5e014dd6.jpg",
     "index.html": "/email-password-generator/index.html",
     "main.a15aa70b.css.map": "/email-password-generator/static/css/main.a15aa70b.css.map",
-    "main.a1a32d39.js.map": "/email-password-generator/static/js/main.a1a32d39.js.map",
+    "main.1f009d6d.js.map": "/email-password-generator/static/js/main.1f009d6d.js.map",
     "787.a228ea0b.chunk.js.map": "/email-password-generator/static/js/787.a228ea0b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a15aa70b.css",
-    "static/js/main.a1a32d39.js"
+    "static/js/main.1f009d6d.js"
   ]
 }
