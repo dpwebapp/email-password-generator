@@ -12,7 +12,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route exact path='/password' element={<Password />} />
         <Route exact path='/email' element={<Email />} />
-        <Route exact path='/*' element={<Home />} />
+        <Route exact path='/*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
