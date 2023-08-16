@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.fbd49f52.css",
-    "main.js": "/static/js/main.27fc56c4.js",
+    "main.js": "/static/js/main.c790a679.js",
     "static/js/787.a228ea0b.chunk.js": "/static/js/787.a228ea0b.chunk.js",
     "static/media/matrix-fall.jpg": "/static/media/matrix-fall.b02891495a0c5e014dd6.jpg",
     "index.html": "/index.html",
     "main.fbd49f52.css.map": "/static/css/main.fbd49f52.css.map",
-    "main.27fc56c4.js.map": "/static/js/main.27fc56c4.js.map",
+    "main.c790a679.js.map": "/static/js/main.c790a679.js.map",
     "787.a228ea0b.chunk.js.map": "/static/js/787.a228ea0b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbd49f52.css",
-    "static/js/main.27fc56c4.js"
+    "static/js/main.c790a679.js"
   ]
 }
